@@ -1,41 +1,47 @@
+let board;
+let gameActive;
+
+function oneP()
+{
+
+}
+function twoP()
+{
+
+}
+function startGame()
+{
+    board =
+        [
+            ['', '', ''],
+            ['', '', ''],
+            ['', '', '']
+        ]
+    gameActive = true;
+    updateBoard();
+}
+function updateBoard()
+{
+
+}
 function clearGrid()
 {
-    document.getElementById("grid").innerHTML = "";
+    startGame();
 }
-
-function space1()
+function fullGrid()
+{
+    
+}
+function move(row, col)
+{
+        board[row][col] = 'X';
+        document.getElementById("grid-item").value = board;
+}
+function checkWin()
 {
 
 }
-function space2()
+document.addEventListener("DOMContentLoaded", () =>
 {
-
-}
-function space3()
-{
-
-}
-function space4()
-{
-
-}
-function space5()
-{
-
-}
-function space6()
-{
-
-}
-function space7()
-{
-
-}
-function space8()
-{
-
-}
-function space9()
-{
-
-}
+    startGame();
+});
