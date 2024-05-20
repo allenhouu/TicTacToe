@@ -1,24 +1,18 @@
-body
-{
-}
 #game
 {
-    margin: 10px;
-}
-.grid-container
-{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
 
-.grid-item
+    text-align: center;
+}
+.cell
 {
     width: 100px;
     height: 100px;
-    border: 2px solid black;
+    border: 2px solid;
     cursor: pointer;
 }
-h3
+#board
 {
-    margin-top: 20px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
