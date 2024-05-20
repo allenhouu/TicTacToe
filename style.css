@@ -1,6 +1,7 @@
+
 #game
 {
-
+    margin-top: 5px;
     text-align: center;
 }
 .cell
@@ -9,6 +10,7 @@
     height: 100px;
     border: 2px solid;
     cursor: pointer;
+    font-size: 75px;
 }
 #board
 {
