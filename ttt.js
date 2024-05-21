@@ -8,7 +8,7 @@ const winCondition = [
     [0,3,6], [1,4,7], [2,5,8],
     [0,4,8], [2,4,6]
 ];
-let tiles = Array(9).fill("");
+let tiles = ['', '', '', '', '', '', '', '', ''];
 let currPlayer = 'X';
 let running = false;
 let isSinglePlayer = false;
