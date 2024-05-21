@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", () =>
 {
 const cell = document.querySelectorAll(".cell");
 const status = document.querySelector("#status");
-const restart = document.querySelector("#restart");
-const singleP = document.querySelector("#singlePlayer");
-const twoP = document.querySelector("#twoPlayers");
+const mode = document.querySelector("#mode");
 const winCondition = [
     [0,1,2], [3,4,5], [6,7,8],
     [0,3,6], [1,4,7], [2,5,8],
@@ -15,18 +13,16 @@ let currPlayer = 'X';
 let running = false;
 let isSinglePlayer = false;
 
+document.querySelector("#restart").addEventListener("click", restartGame);
+document.querySelector("#singlePlayer").addEventListener("click", selectMode(true));
+document.querySelector("#twoPlayers").addEventListener("click", selectMode(false));
 
-
-function startGame()
+cell.forEach(cell => cell.addEventListener("click", cellClicked));
+function selectMode(singlePlayer)
 {
-    cell.forEach(cell => cell.addEventListener("click", cellClicked));
-    restart.addEventListener("click", restartGame);
-    status.textContent = `${currPlayer}'s turn`;
-    running = true;
-}
-function mode(isSinglePlayer)
-{
-
+    isSinglePlayer = singlePlayer;
+    mode.textContent = `Mode: ${singlePlayer ? 'Single Player' : 'Two Player'}`;
+    restartGame();
 }
 function cellClicked()
 {
@@ -63,7 +59,7 @@ function checkWinner()
 
     if (roundWon)
     {
-        status.textContent = `${currPlayer} won`;
+        status.textContent = `${currPlayer} wins!`;
         running = false;
     }
     else if(!tiles.includes(""))
@@ -89,6 +85,10 @@ function bestMove()
         }
     }
 }
+function minimax()
+{
 
-startGame();
+}
+
+restartGame();
 });
