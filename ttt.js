@@ -107,7 +107,7 @@ function bestMove()
 }
 function minimax(board, depth, isMaximizing)
 {
-    if (checkWinner()) return isMaximizing ? -1 : 1;
+    if (checkWinner()) return isMaximizing ? -10 : 10;
     if(!board.includes("")) return 0;
 
     let bestScore = isMaximizing ? -Infinity : Infinity;
